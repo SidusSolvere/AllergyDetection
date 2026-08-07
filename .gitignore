@@ -1,0 +1,38 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Database
+predictions.db
+*.sqlite3
+
+# Model files (only if large — see note below)
+# allergyDetection.h5
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# FastAPI / uvicorn logs
+*.log
+
+# Distribution / packaging
+build/
+dist/
+*.egg
