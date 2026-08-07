@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <title>Pollen Types | AllergyDetector</title>
+</head>
+<body class="bg-green-800 text-gray-800 font-sans">
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center">
+          <div class="text-green-800 font-bold text-2xl">Allergy<span class="text-green-800">Detector</span></div>
+        </div>
+        <div class="hidden md:block">
+          <div class="flex space-x-6">
+            <a href="index.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Home</a>
+            <a href="pollen.html" class="text-green-800 hover:text-green-800 px-3 py-2 text-sm font-medium border-b-2 border-green-800 transform hover:scale-105 transition duration-300 ">Pollen</a>
+            <a href="skin.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Skin</a>
+            <a href="development.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Development</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bg-gradient-to-r from-green-800 to-green-400 text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Common Pollen Types <br><span class="text-green-200">and Their Effects</span>
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8 text-green-50">
+        Learn about the most prevalent pollen allergens, their seasons, and how to manage symptoms.
+      </p>
+      
+    </div>
+  </section>
+
+  <section id="pollen-list" class="py-24 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Pollen Allergy Guide</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Click on a pollen type to see detailed information about allergy symptoms and prevention.
+      </p>
+    </div>
+    
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="https://cdn-icons-png.flaticon.com/128/2997/2997051.png" alt="Tree Pollen" class="w-32 h-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Tree Pollen</h3>
+            <p class="text-gray-600 mb-4">
+              <strong>Season:</strong> Early spring to early summer<br>
+              <strong>Common Sources:</strong> Birch, Oak, Cedar
+            </p>
+            
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="https://cdn-icons-png.flaticon.com/128/5570/5570947.png" alt="Grass Pollen" class="w-32 h-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Grass Pollen</h3>
+            <p class="text-gray-600 mb-4">
+              <strong>Season:</strong> Late spring to summer<br>
+              <strong>Common Sources:</strong> Timothy, Rye, Bermuda
+            </p>
+           
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="https://cdn-icons-png.flaticon.com/128/7408/7408120.png" alt="Regional Pollen" class="w-32 h-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Regional Pollen</h3>
+            <p class="text-gray-600 mb-4">
+              <strong>Varies by location:</strong><br>
+              Check your local pollen forecast for real-time data
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Pollen Allergy Prevention</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Practical tips to reduce exposure and manage symptoms.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-green-50 rounded-xl p-6 border-l-4 border-green-800">
+          <h3 class="text-lg font-bold mb-3 text-green-800"> Indoor Tips</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>Keep windows closed during high pollen counts</li>
+            <li>Use HEPA air filters</li>
+            <li>Shower after being outdoors</li>
+          </ul>
+        </div>
+        
+        <div class="bg-green-50 rounded-xl p-6 border-l-4 border-green-800">
+          <h3 class="text-lg font-bold mb-3 text-green-800">Outdoor Tips</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>Wear sunglasses and hats</li>
+            <li>Avoid outdoor activities in early morning</li>
+            <li>Check pollen forecasts daily</li>
+          </ul>
+        </div>
+        
+        <div class="bg-green-50 rounded-xl p-6 border-l-4 border-green-800">
+          <h3 class="text-lg font-bold mb-3 text-green-800"> Medical Tips</h3>
+          <ul class="text-gray-700 space-y-2">
+            <li>Start antihistamines before season begins</li>
+            <li>Consider allergy shots (immunotherapy)</li>
+            <li>Use saline nasal rinses</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+</html>

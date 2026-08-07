@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <title>Skin Allergies | AllergyDetector</title>
+</head>
+<body class="bg-green-800 text-gray-800 font-sans">
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center">
+          <div class="text-green-800 font-bold text-2xl">Allergy<span class="text-green-800">Detector</span></div>
+        </div>
+        <div class="hidden md:block">
+                    <div class="flex space-x-6">
+            <a href="index.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Home</a>
+            <a href="pollen.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Pollen</a>
+            <a href="skin.html" class="text-green-800 hover:text-green-800 px-3 py-2 text-sm font-medium border-b-2 border-green-800 transform hover:scale-105 transition duration-300">Skin</a>
+            <a href="development.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Development</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bg-gradient-to-r from-green-800 to-green-400 text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Common Skin Allergies <br><span class="text-green-200">and Treatments</span>
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8 text-green-50">
+        Identify and manage eczema, contact dermatitis, and hives with AI-powered analysis.
+      </p>
+     
+    </div>
+  </section>
+
+  <section id="skin-conditions" class="py-24 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Skin Allergy Guide</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Upload photos of skin reactions to our AI chatbot for personalized analysis.
+      </p>
+    </div>
+    
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="https://cdn-icons-png.flaticon.com/128/7407/7407842.png" alt="Eczema" class="w-32 h-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Eczema (Atopic Dermatitis)</h3>
+            <div class="text-left text-gray-600 space-y-2 mb-4">
+              <p><strong class="text-green-700">Symptoms:</strong> Dry, itchy patches, redness, scaly skin</p>
+              <p><strong class="text-green-700">Common Triggers:</strong> Stress, irritants, allergens</p>
+              <p><strong class="text-green-700">Body Areas:</strong> Hands, elbows, knees, face</p>
+            </div>
+            <button class="mt-2 bg-green-800 text-white hover:bg-green-700 px-6 py-2 rounded-lg font-medium transition duration-300">
+              Treatment Options
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="https://cdn-icons-png.flaticon.com/128/16779/16779784.png" alt="Contact Dermatitis" class="w-32 h-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Contact Dermatitis</h3>
+            <div class="text-left text-gray-600 space-y-2 mb-4">
+              <p><strong class="text-green-700">Symptoms:</strong> Red rash, blisters, burning sensation</p>
+              <p><strong class="text-green-700">Common Triggers:</strong> Nickel, latex, cosmetics, poison ivy</p>
+              <p><strong class="text-green-700">Body Areas:</strong> Where skin touched allergen</p>
+            </div>
+            <button class="mt-2 bg-green-800 text-white hover:bg-green-700 px-6 py-2 rounded-lg font-medium transition duration-300">
+              Treatment Options
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="https://cdn-icons-png.flaticon.com/128/6146/6146557.png" alt="Hives" class="w-32 h-32 object-contain">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Hives (Urticaria)</h3>
+            <div class="text-left text-gray-600 space-y-2 mb-4">
+              <p><strong class="text-green-700">Symptoms:</strong> Raised welts, itching, swelling</p>
+              <p><strong class="text-green-700">Common Triggers:</strong> Foods, medications, insect stings</p>
+              <p><strong class="text-green-700">Body Areas:</strong> Anywhere on body</p>
+            </div>
+            <button class="mt-2 bg-green-800 text-white hover:bg-green-700 px-6 py-2 rounded-lg font-medium transition duration-300">
+              Treatment Options
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Skin Allergy Comparison</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Key differences between common skin allergy conditions.
+        </p>
+      </div>
+      
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white rounded-lg overflow-hidden">
+          <thead class="bg-green-800 text-white">
+            <tr>
+              <th class="py-4 px-6 text-left">Feature</th>
+              <th class="py-4 px-6 text-left">Eczema</th>
+              <th class="py-4 px-6 text-left">Contact Dermatitis</th>
+              <th class="py-4 px-6 text-left">Hives</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            <tr class="border-b border-gray-200 hover:bg-green-50">
+              <td class="py-4 px-6 font-semibold">Appearance</td>
+              <td class="py-4 px-6">Dry, scaly patches</td>
+              <td class="py-4 px-6">Red rash with clear borders</td>
+              <td class="py-4 px-6">Raised, red welts</td>
+            </tr>
+            <tr class="border-b border-gray-200 hover:bg-green-50">
+              <td class="py-4 px-6 font-semibold">Duration</td>
+              <td class="py-4 px-6">Chronic (weeks-months)</td>
+              <td class="py-4 px-6">2-4 weeks after exposure</td>
+              <td class="py-4 px-6">Hours to days</td>
+            </tr>
+            <tr class="border-b border-gray-200 hover:bg-green-50">
+              <td class="py-4 px-6 font-semibold">Itch Level</td>
+              <td class="py-4 px-6">Intense</td>
+              <td class="py-4 px-6">Moderate to severe</td>
+              <td class="py-4 px-6">Mild to intense</td>
+            </tr>
+            <tr class="border-b border-gray-200 hover:bg-green-50">
+              <td class="py-4 px-6 font-semibold">Common Treatments</td>
+              <td class="py-4 px-6">Moisturizers, topical steroids</td>
+              <td class="py-4 px-6">Avoid triggers, antihistamines</td>
+              <td class="py-4 px-6">Antihistamines, cool compresses</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+
+</body>
+</html>

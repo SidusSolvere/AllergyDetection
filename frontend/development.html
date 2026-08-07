@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <title>Development Process | Allergy Detector</title>
+</head>
+<body class="bg-green-800 text-gray-800 font-sans">
+  <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/04/08/10/20250408102148-NHO3ZELL.js"></script>
+  
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 ">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center">
+          <div class="text-green-800 font-bold text-2xl">Allergy<span class="text-green-800">Detector</span></div>
+        </div>
+        <div class="hidden md:block">
+          <div class="flex space-x-6">
+            <a href="index.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Home</a>
+            <a href="pollen.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Pollen</a>
+            <a href="skin.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Skin</a>
+            <a href="development.html" class="text-green-800 hover:text-green-800 px-3 py-2 text-sm font-medium border-b-2 border-green-800 transform hover:scale-105 transition duration-300">Development</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bg-gradient-to-r from-green-800 to-green-400 text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Our <span class="text-green-200">Development Journey</span>
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-green-50">
+        From concept to deployment - see how we built an AI-powered allergy detection system
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">How We Built AllergyDetector</h2>
+        <p class="text-xl text-gray-600">
+          A step-by-step look at our technical implementation
+        </p>
+      </div>
+
+      <div class="space-y-12">
+        <div class="flex flex-col md:flex-row items-start">
+          <div class="md:w-1/4 mb-4 md:mb-0">
+            <div class="bg-green-800 text-white rounded-lg p-4 text-center shadow-lg">
+              <span class="text-2xl font-bold">1</span>
+              <h3 class="text-lg font-semibold mt-2">Research Phase</h3>
+            </div>
+          </div>
+          <div class="md:w-3/4 md:pl-8">
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
+              <h4 class="text-xl font-bold mb-4 text-green-800">Identifying Allergy Types</h4>
+              <p class="text-gray-600 mb-4">
+                We began by researching common allergy types to determine which would benefit most from AI analysis. After evaluating several options, we focused on:
+              </p>
+              <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                <li><strong>Pollen allergies</strong> - Seasonal and highly location-dependent</li>
+                <li><strong>Skin allergies</strong> - Visible symptoms suitable for image analysis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-start">
+          <div class="md:w-1/4 mb-4 md:mb-0">
+            <div class="bg-green-800 text-white rounded-lg p-4 text-center shadow-lg">
+              <span class="text-2xl font-bold">2</span>
+              <h3 class="text-lg font-semibold mt-2">Data Collection</h3>
+            </div>
+          </div>
+          <div class="md:w-3/4 md:pl-8">
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
+              <h4 class="text-xl font-bold mb-4 text-green-800">Building Our Dataset</h4>
+              <p class="text-gray-600 mb-4">
+                We created a binary classification dataset with two categories:
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h5 class="font-bold text-green-800 mb-2">Healthy Skin</h5>
+                  <p class="text-sm text-gray-600">
+                    Sourced from Kaggle public datasets containing images of normal, healthy skin
+                  </p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h5 class="font-bold text-green-800 mb-2">Allergic Reactions</h5>
+                  <p class="text-sm text-gray-600">
+                    Collected from Dermnet, featuring various allergic skin conditions
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-start">
+          <div class="md:w-1/4 mb-4 md:mb-0">
+            <div class="bg-green-800 text-white rounded-lg p-4 text-center shadow-lg">
+              <span class="text-2xl font-bold">3</span>
+              <h3 class="text-lg font-semibold mt-2">Model Training</h3>
+            </div>
+          </div>
+          <div class="md:w-3/4 md:pl-8">
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
+              <h4 class="text-xl font-bold mb-4 text-green-800">CNN Architecture</h4>
+              <p class="text-gray-600 mb-4">
+                We developed a binary classification CNN model using TensorFlow/Keras with the following architecture:
+              </p>
+              <div class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto">
+                <pre class="text-sm">
+# 
+model = Sequential()
+model.add(Input(shape=(256, 256, 3)))  
+
+model.add(Conv2D(16, (3, 3), strides=1, activation='relu'))  
+model.add(MaxPooling2D())
+
+model.add(Conv2D(32, (3, 3), strides=1, activation='relu'))
+model.add(MaxPooling2D())
+
+model.add(Conv2D(16, (3, 3), strides=1, activation='relu'))
+model.add(MaxPooling2D())
+
+model.add(Flatten())
+
+model.add(Dense(256, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+
+model.compile(optimizer='adam', loss=tf.losses.BinaryCrossentropy(), metrics=['accuracy'
+
+])</pre>
+              </div>
+              <p class="text-gray-600 mt-4">
+                The model was trained on Google Colab leveraging GPU acceleration for faster iteration.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-start">
+          <div class="md:w-1/4 mb-4 md:mb-0">
+            <div class="bg-green-800 text-white rounded-lg p-4 text-center shadow-lg">
+              <span class="text-2xl font-bold">4</span>
+              <h3 class="text-lg font-semibold mt-2">Model Deployment</h3>
+            </div>
+          </div>
+          <div class="md:w-3/4 md:pl-8">
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition duration-300">
+              <h4 class="text-xl font-bold mb-4 text-green-800">API Development</h4>
+              <p class="text-gray-600 mb-4">
+                We saved the trained model as a .h5 file and created a REST API endpoint using FastAPI:
+              </p>
+              <div class="bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto">
+                <pre class="text-sm">
+import numpy as np
+import tensorflow as tf
+import keras
+
+class AllergyPredictor:
+    def __init__(self, model_path: str):
+        self.model = keras.saving.load_model(model_path)
+
+    def predict(self, img: np.ndarray) -> dict:
+        resized = tf.image.resize(img, (256, 256))
+        sev = float(self.model.predict(np.expand_dims(resized / 255.0, 0))[0][0])
+        return self._interpret(sev)
+
+    def _interpret(self, sev: float) -> dict:
+        if sev < 0.1: result = "Severe allergy. Please visit a doctor immediately."
+        elif sev < 0.3: result = "Moderate allergy. Please consult a doctor."
+        elif sev < 0.5: result = "Mild allergy. Monitor the condition."
+        elif sev < 0.7: result = "Low chance of allergy. Keep an eye on symptoms."
+        else: result = "No signs of allergy."
+        return {"result": result, "severity": round(1 - sev, 4), "severity_percentage": round((1 - sev) * 100, 2)}</pre>
+          </div>
+          <p class="text-gray-600 mt-4">
+            The API was deployed to Render for reliable cloud hosting with automatic scaling.
+          </p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+</body>
+</html>

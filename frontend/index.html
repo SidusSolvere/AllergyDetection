@@ -1,80 +1,288 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Allergy Detection</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <title>Allergy Detector</title>
 </head>
+<body class="bg-green-800 text-gray-800 font-sans">
 
-<body>
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 ">
+      <div class="flex justify-between h-16 items-center">
+        <div class="flex items-center">
+          <div class="text-green-800 font-bold text-2xl">Allergy<span class="text-green-800">Detector</span></div>
+        </div>
+        <div class="hidden md:block">
+          <div class="flex space-x-6">
+            <a href="index.html" class="text-green-800 hover:text-green-800 px-3 py-2 text-sm font-medium border-b-2 border-green-800 transform hover:scale-105 transition duration-300">Home</a>
+            <a href="pollen.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Pollen</a>
+            <a href="skin.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Skin</a>
+            <a href="development.html" class="text-gray-500 hover:text-green-800 px-3 py-2 text-sm font-medium hover:border-b-2 hover:border-green-800 transition-all transform hover:scale-105 transition duration-300">Development</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="home" class="static bg-gradient-to-r from-green-800 to-green-400 text-white">
+      <div class="flex ">
+        <div class="flex-1 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 relative z-10">
 
-  <h1>Upload a Photo</h1>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            All Your Allergy Solutions <br><span class="text-green-200">In One Place</span>
+          </h1>
+          <p class="text-lg md:text-xl leading-relaxed max-w-xl mb-8 text-green-50">
+            Our AI-powered chatbot provides instant guidance for seasonal pollen allergies, skin reactions, and chronic conditions—with intelligent analysis and personalized recommendations.
+          </p>
+           
+            <a href="#learn-more" class="bg-white m-8 text-green-800 border-2 hover:bg-green-800 hover:text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg transform hover:scale-105 transition duration-300">
+              Learn More
+            </a>
+        </div>
+      </div>
+      <div class="flex-1 ">
+          <img src="allergy2.png" alt="Base Image"
+               class="mt-6 absolute right-0 ">
 
-  <input type="file" id="fileInput" accept="image/*">
-  <button onclick="upload()">Check</button>
+          <img src="allergy1.png" alt="Rotating Image" id="rotatingImage"
+               class="mt-6  absolute right-0 transform  object-cover translate-x-[5px]  transition-transform duration-300 rounded-xl w-128 h-128">
 
-  <div id="result"></div>
+        </div>
+
+      </div>
+
+
+  </section>
+
+  <script>
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const rotateDeg = scrollY * 0.1;
+    const rotatingImage = document.getElementById("rotatingImage");
+    if (rotatingImage) {
+      rotatingImage.style.transform = `rotate(${rotateDeg}deg)`;
+    }
+  });
+  </script>
+
+  <style>
+  #rotatingImage {
+    transition: transform 0.2s ease-out;
+  }
+  </style>
+
+  <section id="chat-now" class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Check a Skin Reaction</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Upload a clear photo of the affected area. Our model estimates severity, then our AI assistant explains what it means and what to do next.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+        <div class="bg-green-50 rounded-2xl shadow-lg p-8">
+          <h3 class="text-xl font-bold mb-6 text-green-800">1. Upload a photo</h3>
+
+          <label id="dropLabel" for="fileInput"
+                 class="flex flex-col items-center justify-center border-2 border-dashed border-green-800 border-opacity-30 rounded-xl py-12 px-6 cursor-pointer bg-white hover:bg-green-50 transition duration-300">
+            <svg class="w-10 h-10 text-green-800 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9m0 0-3 3m3-3 3 3M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15A2.25 2.25 0 0 0 2.25 6.75v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+            </svg>
+            <span id="dropText" class="text-gray-600 text-sm text-center">
+              <span class="font-semibold text-green-800">Click to upload</span> or drag and drop<br>
+              PNG or JPG
+            </span>
+          </label>
+          <input type="file" id="fileInput" accept="image/*" class="hidden">
+
+          <button id="checkBtn" onclick="upload()"
+                  class="mt-6 w-full bg-green-800 text-white font-bold py-3 rounded-lg shadow hover:bg-green-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+            Check Photo
+          </button>
+
+          <p class="text-xs text-gray-500 mt-4 text-center">
+            This tool does not provide a medical diagnosis. Always consult a doctor for anything serious.
+          </p>
+        </div>
+
+        <div class="bg-green-50 rounded-2xl shadow-lg p-8 min-h-[380px]">
+          <h3 class="text-xl font-bold mb-6 text-green-800">2. Result</h3>
+          <div id="result">
+            <div class="flex flex-col items-center justify-center text-center text-gray-400 py-16">
+              <svg class="w-10 h-10 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+              </svg>
+              <p>Upload a photo to see your result here.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Comprehensive Allergy Support</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Our platform combines advanced AI technology with medical expertise to help you understand, identify, and manage your allergies.
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="box2.png" alt="Pollen Allergies" class="w-32 h-32 object-cover rounded-lg">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Pollen Allergy Insights</h3>
+            <p class="text-gray-600">
+              Get real-time pollen counts, forecasts, and personalized recommendations based on your location and specific sensitivities.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="box1.png" alt="Skin Allergies" class="w-32 h-32 object-cover rounded-lg">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Skin Condition Analysis</h3>
+            <p class="text-gray-600">
+              Upload photos of skin reactions for AI-powered analysis and receive insights on common conditions like dermatitis and eczema.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="box3.png" alt="Chatbot" class="w-32 h-32 object-cover rounded-lg">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Intelligent Chatbot</h3>
+            <p class="text-gray-600">
+              Our AI assistant answers questions, provides guidance, and helps you manage your allergy concerns around the clock.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+          <div class="flex flex-col items-center text-center">
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <img src="box5.png" alt="Future Goals" class="w-32 h-32 object-cover rounded-lg">
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-green-800">Continuous Innovation</h3>
+            <p class="text-gray-600">
+              We're constantly improving our technology to provide more accurate diagnostics and personalized allergy management plans.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <script>
     const API = "http://127.0.0.1:8000";
 
+    const fileInput = document.getElementById("fileInput");
+    const dropText  = document.getElementById("dropText");
+    const checkBtn  = document.getElementById("checkBtn");
+    const resultBox = document.getElementById("result");
+
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      if (file) {
+        dropText.innerHTML = `<span class="font-semibold text-green-800">${file.name}</span> selected — click Check Photo`;
+      }
+    });
+
+    function severityColor(pct) {
+      if (pct >= 70) return { bg: "bg-red-100", text: "text-red-800", label: "Severe" };
+      if (pct >= 50) return { bg: "bg-orange-100", text: "text-orange-800", label: "Moderate" };
+      if (pct >= 30) return { bg: "bg-yellow-100", text: "text-yellow-800", label: "Mild" };
+      return { bg: "bg-green-100", text: "text-green-800", label: "Low concern" };
+    }
+
     async function upload() {
-      const file = document.getElementById("fileInput").files[0];
+      const file = fileInput.files[0];
 
       if (!file) {
-        alert("Please select an image.");
+        alert("Please select an image first.");
         return;
       }
 
       const formData = new FormData();
       formData.append("file", file);
 
-      document.getElementById("result").innerHTML = "<p>Analyzing...</p>";
+      checkBtn.disabled = true;
+      checkBtn.textContent = "Analyzing...";
+      resultBox.innerHTML = `
+        <div class="flex flex-col items-center justify-center py-16">
+          <div class="w-8 h-8 border-4 border-green-800 border-t-transparent rounded-full animate-spin mb-4"></div>
+          <p class="text-gray-500">Analyzing your photo...</p>
+        </div>
+      `;
 
       try {
-        const res = await fetch(`${API}/predict`, {
-          method: "POST",
-          body: formData
-        });
+        const res = await fetch(`${API}/predict`, { method: "POST", body: formData });
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.detail || `Server error (${res.status})`);
+        }
 
         const data = await res.json();
+        const sev = severityColor(data.severity_percentage);
 
-        document.getElementById("result").innerHTML = `
-                    <h2>Prediction Result</h2>
+        resultBox.innerHTML = `
+          <div class="mb-6">
+            <span class="inline-block ${sev.bg} ${sev.text} text-xs font-bold px-3 py-1 rounded-full mb-3">
+              ${sev.label} · ${data.severity_percentage}%
+            </span>
+            <p class="text-lg font-bold text-gray-800">${data.result}</p>
+          </div>
 
-                    <p><strong>Result:</strong> ${data.result}</p>
+          <div class="bg-white rounded-xl p-5 mb-4">
+            <h4 class="text-sm font-bold text-green-800 mb-2 uppercase tracking-wide">AI Explanation</h4>
+            <p class="text-gray-700 text-sm">${data.advice.explanation}</p>
+          </div>
 
-                    <p><strong>Severity Score:</strong> ${data.severity}</p>
+          <div class="bg-white rounded-xl p-5 mb-4">
+            <h4 class="text-sm font-bold text-green-800 mb-3 uppercase tracking-wide">Care Tips</h4>
+            <ul class="space-y-2">
+              ${data.advice.care_tips.map(tip => `
+                <li class="flex items-start text-sm text-gray-700">
+                  <svg class="w-4 h-4 text-green-800 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  ${tip}
+                </li>
+              `).join("")}
+            </ul>
+          </div>
 
-                    <p><strong>Severity Percentage:</strong> ${data.severity_percentage}%</p>
-
-                    <hr>
-
-                    <h3>AI Advice</h3>
-
-                    <p>${data.advice.explanation}</p>
-
-                    <h4>Care Tips</h4>
-
-                    <ul>
-                        ${data.advice.care_tips
-            .map(tip => `<li>${tip}</li>`)
-            .join("")}
-                    </ul>
-
-                    <p>
-                        <strong>Doctor Recommendation:</strong>
-                        ${data.advice.see_doctor
-            ? "Yes, consult a doctor."
-            : "Home care should be sufficient."}
-                    </p>
-                `;
+          <div class="${data.advice.see_doctor ? 'bg-red-50 text-red-800' : 'bg-green-100 text-green-800'} rounded-xl p-4 text-sm font-semibold text-center">
+            ${data.advice.see_doctor ? "⚠️ Please consult a doctor" : "✓ Home care should be sufficient"}
+          </div>
+        `;
       } catch (err) {
-        document.getElementById("result").innerHTML =
-          `<p style="color:red;">Error: ${err.message}</p>`;
+        resultBox.innerHTML = `
+          <div class="bg-red-50 text-red-700 rounded-xl p-5 text-sm">
+            <p class="font-semibold mb-1">Something went wrong</p>
+            <p>${err.message}</p>
+          </div>
+        `;
+      } finally {
+        checkBtn.disabled = false;
+        checkBtn.textContent = "Check Photo";
       }
     }
   </script>
 
 </body>
-
 </html>
