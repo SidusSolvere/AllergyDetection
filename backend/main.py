@@ -35,4 +35,9 @@ async def predict(file: UploadFile = File(...)):
 
         return cnn_result
 
-        
+@app.get("/history")
+async def history():
+    db = SessionLocal()
+    rows = db.query(Prediction).order_by(Prediction.created_at.desc()).limit(20).all()
+    db.close()
+    return [{"result": r.result, "severity_percentage": r.severity_percentage, "created_at": r.created_at} for r in rows]
