@@ -1,14 +1,9 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(
-    title="AllergyVision AI",
-    version="0.1.0",
-    description="Backend API for allergy detection."
-)
-
+app = FastAPI()
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 @app.get("/")
 async def root():
-    return {
-        "message": "AllergyVision AI API is running."
-    }
+    return {"message": "Allergy Detection API is up."}
