@@ -2,11 +2,13 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import numpy as np, cv2
 from predictor import AllergyPredictor
+from database import SessionLocal, Prediction
 
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 predictor = AllergyPredictor("allergyDetection.h5")
+
 
 @app.get("/")
 async def root():
@@ -24,3 +26,13 @@ async def predict(file: UploadFile = File(...)):
         return predictor.predict(img)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
+        cnn_result = predictor.predict(img)
+
+        db = SessionLocal()
+        db.add(Prediction(result=cnn_result["result"], severity_percentage=cnn_result["severity_percentage"]))
+        db.commit()
+        db.close()
+
+        return cnn_result
+
+        
